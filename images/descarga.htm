@@ -1,0 +1,1212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Popstore</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Catalogo en linea">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/sitio/styles/bootstrap4/bootstrap.min.css">
+    <link href="/static/sitio/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/static/sitio/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/static/sitio/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="/static/sitio/plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="/static/sitio/styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/sitio/styles/responsive.css">
+    <link href="/static/sitio/botonflotante.css" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/sitio/plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/static/sweetalert2/sweetalert2.css">
+    <script src="/static/sweetalert2/sweetalert2.js"></script>
+    <link href="/static/table-responsive.css?1.0.0" type="text/css" rel="stylesheet"/>
+</head>
+
+
+
+
+<style>
+    .btn-mini {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 10.5px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px
+    }
+
+    .submenu {
+        position: relative;
+    }
+
+    .submenu #carrito {
+        display: none;
+    }
+
+    .submenu:hover #carrito {
+        display: block;
+        position: absolute;
+        right: 0;
+
+        top: 100%;
+        z-index: 1;
+        background-color: white;
+        padding: 20px;
+        min-height: 400px;
+        min-width: 300px;
+    }
+
+    .vacio {
+        padding: 10px;
+        background-color: crimson;
+        text-align: center;
+        border-radius: 10px;
+        color: white;
+    }
+
+    .search-inside {
+        padding-top: 250px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, .8);
+        z-index: 500;
+        display: none;
+    }
+
+    .search-inside .search-overlay {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .search-inside .search-close {
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 500;
+    }
+
+    .search-inside .search {
+        display: inline-block;
+        width: 90%;
+        position: relative;
+    }
+
+    .search-inside .position-center-center {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .search-inside .search input {
+        background: #fff;
+        font-size: 20px;
+        color: #333;
+        text-align: left;
+        height: 60px;
+        width: 100%;
+        border: none;
+        padding: 0 20px;
+        -webkit-transition: 0.4s ease-in-out;
+        -moz-transition: 0.4s ease-in-out;
+        -ms-transition: 0.4s ease-in-out;
+        -o-transition: 0.4s ease-in-out;
+        transition: 0.4s ease-in-out;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .search-inside .search input:focus {
+        outline: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .search-inside .search button {
+        position: absolute;
+        right: 0;
+        top: 0px;
+        line-height: 60px;
+        margin-top: 0px;
+        font-size: 30px;
+        background: none;
+    }
+
+    .search-inside .search button:hover {
+        color: #333;
+    }
+
+    .search input {
+        display: inline-block;
+        width: 100%;
+        height: 45px;
+        background: #fff;
+        box-shadow: none;
+        border-radius: 0px;
+        border: 1px solid #e6e6e6;
+    }
+
+    .search button {
+        float: right;
+        margin-top: 0px;
+        line-height: 45px;
+        margin-right: 0px;
+        margin-top: -45px;
+        position: relative;
+        z-index: 1;
+        border-radius: 50%;
+        border: none;
+        color: #313f46;
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+        background: none;
+    }
+
+    .pagination {
+        float: right;
+        display: inline-block;
+        padding-left: 0;
+        margin: 20px 0;
+        border-radius: 4px
+    }
+
+    .pagination > li {
+        display: inline
+    }
+
+    .pagination > li > a, .pagination > li > span {
+        position: relative;
+        padding: 6px 12px;
+        line-height: 1.42857143;
+        color: #337ab7;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd
+    }
+
+    .pagination > li:first-child > a, .pagination > li:first-child > span {
+        margin-left: 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px
+    }
+
+    .pagination > li:last-child > a, .pagination > li:last-child > span {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px
+    }
+
+    .pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+        z-index: 2;
+        color: #23527c;
+        background-color: #eee;
+        border-color: #ddd
+    }
+
+    .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+        z-index: 3;
+        color: #fff;
+        cursor: default;
+        background-color: #337ab7;
+        border-color: #337ab7
+    }
+
+    .pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover, .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
+        color: #777;
+        cursor: not-allowed;
+        background-color: #fff;
+        border-color: #ddd
+    }
+
+    .pagination-lg > li > a, .pagination-lg > li > span {
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.3333333
+    }
+
+    .pagination-lg > li:first-child > a, .pagination-lg > li:first-child > span {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px
+    }
+
+    .pagination-lg > li:last-child > a, .pagination-lg > li:last-child > span {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px
+    }
+
+    .pagination-sm > li > a, .pagination-sm > li > span {
+        padding: 5px 10px;
+        font-size: 12px;
+        line-height: 1.5
+    }
+
+    .pagination-sm > li:first-child > a, .pagination-sm > li:first-child > span {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px
+    }
+
+    .pagination-sm > li:last-child > a, .pagination-sm > li:last-child > span {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px
+    }
+
+    tr:nth-child(odd) {
+        background-color:#f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color:#fbfbfb;
+    }
+
+</style>
+
+<body>
+
+<div class="super_container">
+
+    <!-- Header -->
+
+    <header class="header trans_300">
+
+        <div class="main_nav_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-right">
+                        <div class="logo_container">
+                            <a href="/">Popstore</a>
+                        </div>
+                        <nav class="navbar">
+                            <ul class="navbar_menu">
+                                <li><a href="/">Inicio</a></li>
+                            </ul>
+                            <ul class="navbar_user">
+                                <li>
+                                    <a href="javascript:void(0);" class="search-open">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="checkout">
+                                    <a href="#" data-toggle="modal" data-target="#modals-slide">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        <span id="totalItems" class="checkout_items">0</span>
+                                    </a>
+                                </li>
+                                <li class="dropdown"><a href="javascript:void(0);" class="search-open">
+                                    <i
+                                            class="icon-magnifier"></i></a>
+                                    <div class="search-inside animated bounceInUp">
+                                        <i class="fa fa-window-close search-close"></i>
+
+                                        <div class="search-overlay"></div>
+                                        <div class="position-center-center">
+                                            <div class="search">
+                                                <form method="GET" action="/">
+                                                    <input name="criterio" type="search"
+                                                           placeholder="Buscar por nombre o marca del producto">
+                                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="hamburger_container">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="fs_menu_overlay"></div>
+
+    <div class="hamburger_menu">
+        <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <div class="hamburger_menu_content text-right">
+            <ul class="menu_top_nav">
+                <li class="menu_item"><a href="/">Inicio</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="fs_menu_overlay"></div>
+
+    
+
+    <br><br><br>
+    <style>
+
+        .default-style .ui-bordered {
+            border: 1px solid rgba(24, 28, 33, 0.06)
+        }
+
+    </style>
+    <div class="new_arrivals">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section_title new_arrivals_title">
+                        <h2>Catalogo de Productos</h2>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="container px-3">
+                <div class="row row-bordered no-gutters ui-bordered">
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0115_1_2020720_sRdCOYQ.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0115_1_2020720_sRdCOYQ.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>AGENDA HARRY POTTER</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                HARRY POTTER
+                            </h6>
+                            <h3>
+                                <strong>$20,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('109','AGENDA HARRY POTTER',
+                                               '20,00',
+                                               'https://popstore.solucionados.live/media/productos/0115_1_2020720_sRdCOYQ.jpg');"
+                                       data-id="109">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0090_1_2020528.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0090_1_2020528.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>AVENGERS MARVEL SERIE LEGENDS ENDGAME MARVEL WAR MACHINE</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                MARVEL
+                            </h6>
+                            <h3>
+                                <strong>$35,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-danger text-expanded">AGOTADO</a>
+                                    &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0155_1_202082.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0155_1_202082.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BANDAI TAMASHII NATIONS S.H. FIGUARTS SHENLONG</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                ANIME
+                            </h6>
+                            <h3>
+                                <strong>$75,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('132','BANDAI TAMASHII NATIONS S.H. FIGUARTS SHENLONG',
+                                               '75,00',
+                                               'https://popstore.solucionados.live/media/productos/0155_1_202082.jpg');"
+                                       data-id="132">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0161_1_202082.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0161_1_202082.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BANPRESTO 39407 MY HERO ACADEMIA GRANDISTA IZUKU MIDORIYA VOL. 1</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                ANIME
+                            </h6>
+                            <h3>
+                                <strong>$25,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('138','BANPRESTO 39407 MY HERO ACADEMIA GRANDISTA IZUKU MIDORIYA VOL. 1',
+                                               '25,00',
+                                               'https://popstore.solucionados.live/media/productos/0161_1_202082.jpg');"
+                                       data-id="138">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0158_1_202082.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0158_1_202082.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BANPRESTO DRAGON BALL Z 5.5-INCH NAPPA CIFRA</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                ANIME
+                            </h6>
+                            <h3>
+                                <strong>$20,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('135','BANPRESTO DRAGON BALL Z 5.5-INCH NAPPA CIFRA',
+                                               '20,00',
+                                               'https://popstore.solucionados.live/media/productos/0158_1_202082.jpg');"
+                                       data-id="135">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0157_1_202082.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0157_1_202082.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BANPRESTO DRAGON BALL Z SON GOKU KA-ME-HA-ME-HA</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                ANIME
+                            </h6>
+                            <h3>
+                                <strong>$20,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('134','BANPRESTO DRAGON BALL Z SON GOKU KA-ME-HA-ME-HA',
+                                               '20,00',
+                                               'https://popstore.solucionados.live/media/productos/0157_1_202082.jpg');"
+                                       data-id="134">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0151_1_2020729.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0151_1_2020729.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BANPRESTO MY HERO ACADEMIA</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BANPRESTO
+                            </h6>
+                            <h3>
+                                <strong>$20,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('127','BANPRESTO MY HERO ACADEMIA',
+                                               '20,00',
+                                               'https://popstore.solucionados.live/media/productos/0151_1_2020729.jpg');"
+                                       data-id="127">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/1020_1_202078.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/1020_1_202078.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BILLETERA DE CUERO BIOWORLD AVENTURE TIME</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BIOWORLD
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('99','BILLETERA DE CUERO BIOWORLD AVENTURE TIME',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/1020_1_202078.jpg');"
+                                       data-id="99">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/1017_1_202078.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/1017_1_202078.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BILLETERA DE CUERO BIOWORLD FORTNITE</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BIOWORLD
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('96','BILLETERA DE CUERO BIOWORLD FORTNITE',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/1017_1_202078.jpg');"
+                                       data-id="96">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/1016_1_202078.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/1016_1_202078.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BILLETERA DE CUERO BIOWORLD GAMER</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BIOWORLD
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('95','BILLETERA DE CUERO BIOWORLD GAMER',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/1016_1_202078.jpg');"
+                                       data-id="95">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/1014_1_202078.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/1014_1_202078.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BILLETERA DE CUERO BIOWORLD HARLEY QUIN</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BIOWORLD
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('93','BILLETERA DE CUERO BIOWORLD HARLEY QUIN',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/1014_1_202078.jpg');"
+                                       data-id="93">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/1018_1_202078.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/1018_1_202078.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BILLETERA DE CUERO BIOWORLD HARRY POTTER</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BIOWORLD
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('97','BILLETERA DE CUERO BIOWORLD HARRY POTTER',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/1018_1_202078.jpg');"
+                                       data-id="97">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/1013_1_202078.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/1013_1_202078.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BILLETERA DE CUERO BIOWORLD HULK</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BIOWORLD
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('92','BILLETERA DE CUERO BIOWORLD HULK',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/1013_1_202078.jpg');"
+                                       data-id="92">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/1019_1_202078.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/1019_1_202078.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BILLETERA DE CUERO BIOWORLD POKEMON</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BIOWORLD
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('98','BILLETERA DE CUERO BIOWORLD POKEMON',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/1019_1_202078.jpg');"
+                                       data-id="98">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/1012_1_202078.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/1012_1_202078.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BILLETERA DE CUERO BIOWORLD ROBIN</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BIOWORLD
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('91','BILLETERA DE CUERO BIOWORLD ROBIN',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/1012_1_202078.jpg');"
+                                       data-id="91">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/1015_1_202078.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/1015_1_202078.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>BILLETERA DE CUERO BIOWORLD SUPERMAN</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                BIOWORLD
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('94','BILLETERA DE CUERO BIOWORLD SUPERMAN',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/1015_1_202078.jpg');"
+                                       data-id="94">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0122_1_2020729.png" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0122_1_2020729.png" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>CAPS MARIO BROSS ORIGINAL</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                GAMERS
+                            </h6>
+                            <h3>
+                                <strong>$25,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('128','CAPS MARIO BROSS ORIGINAL',
+                                               '25,00',
+                                               'https://popstore.solucionados.live/media/productos/0122_1_2020729.png');"
+                                       data-id="128">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0117_1_2020720.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0117_1_2020720.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>CUADERNO DRAGON BALL Z</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                ANIME
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('111','CUADERNO DRAGON BALL Z',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/0117_1_2020720.jpg');"
+                                       data-id="111">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0118_1_2020720.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0118_1_2020720.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>CUADERNO MARVEL</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                MARVEL
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('112','CUADERNO MARVEL',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/0118_1_2020720.jpg');"
+                                       data-id="112">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0119_1_2020720.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0119_1_2020720.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>CUADERNO POKEMON</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                ANIME
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('113','CUADERNO POKEMON',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/0119_1_2020720.jpg');"
+                                       data-id="113">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+
+                        <div class="col-sm-3 col-lg-4 text-center p-3"
+                             style="border: 1px solid rgba(24,28,33,0.06); margin-bottom: 20px;">
+                            <a href="https://popstore.solucionados.live/media/productos/0116_1_2020720.jpg" data-lightbox="roadtrip" class="d-block">
+                                <img src="https://popstore.solucionados.live/media/productos/0116_1_2020720.jpg" class="mb-2" alt
+                                     style="max-width: 100%; max-height: 200px">
+                            </a>
+                            <h5>
+                                <strong>CUADERNO RICKY AND MORTY</strong>
+                            </h5>
+                            <h6 class="text-info mb-3">
+                                RICKY AND MORTY
+                            </h6>
+                            <h3>
+                                <strong>$15,00</strong>
+                            </h3>
+                            <div class="mt-4 mb-3">
+                                
+                                    <a href="javascript:;" class="btn btn-outline-info text-expanded"
+                                       onclick="app.addtoCart('110','CUADERNO RICKY AND MORTY',
+                                               '15,00',
+                                               'https://popstore.solucionados.live/media/productos/0116_1_2020720.jpg');"
+                                       data-id="110">Agregar al Carrito</a> &nbsp;
+                                
+                            </div>
+                        </div>
+
+                    
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <nav>
+                        
+                            <div class="well-sm">
+                                <ul class='pagination'>
+                                    
+                                    
+                                        <li class='active'>
+                                            <a href="?page=1">1</a>
+                                        </li>
+                                    
+                                        <li >
+                                            <a href="?page=2">2</a>
+                                        </li>
+                                    
+                                        <li >
+                                            <a href="?page=3">3</a>
+                                        </li>
+                                    
+                                        <li >
+                                            <a href="?page=4">4</a>
+                                        </li>
+                                    
+                                        <li >
+                                            <a href="?page=5">5</a>
+                                        </li>
+                                    
+                                        <li >
+                                            <a href="?page=6">6</a>
+                                        </li>
+                                    
+                                    
+                                        <li>
+                                            <a href="?page=7"
+                                               class="active">...</a></li>
+                                        <li>
+                                            <a href="?page=9">9</a>
+                                        </li>
+                                    
+                                </ul>
+                            </div>
+                        
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="benefit">
+        <div class="container">
+            <div class="row benefit_row">
+                <div class="col-lg-3 benefit_col">
+                    <div class="benefit_item d-flex flex-row align-items-center">
+                        <div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+                        <div class="benefit_content">
+                            <h6>ENVÍO GRATIS</h6>
+                            <p>En compras mayores a $50</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 benefit_col">
+                    <div class="benefit_item d-flex flex-row align-items-center">
+                        <div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+                        <div class="benefit_content">
+                            <h6>SE ACEPTAN TODOS LOS TIPOS DE PAGO</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 benefit_col">
+                    <div class="benefit_item d-flex flex-row align-items-center">
+                        <div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+                        <div class="benefit_content">
+                            <h6>ATENCION 24 HORAS EN LINEA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 benefit_col">
+                    <div class="benefit_item d-flex flex-row align-items-center">
+                        <div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                        <div class="benefit_content">
+                            <h6>ABIERTO DE LUNES A SABADO</h6>
+                            <p>8AM - 06PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="/static/lightbox/css/lightbox.min.css">
+    <script src="/static/lightbox/js/lightbox-plus-jquery.min.js"></script>
+
+
+
+
+
+    <div id="contenedor">
+        <a id="myBtn" rel="action"
+           target="_blank" data-toggle="Whatsapp Contacto">
+            <span class="icon"><i class="fa fa-whatsapp"></i></span></a>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+                        <ul>
+                            <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer_nav_container">
+                        <div class="cr">©2020 <a href="/">POPSTORE</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal modal-slide fade" id="modals-slide" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form class="modal-content">
+                <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-shopping-cart"></i> Carrito</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="cart u-full-width" id="tb_pedidos" width="100%">
+                            <thead style="background-color: #0c0b0f; color: #FFFFFF; font-size: 10px;">
+                            <tr style="background-color: #1b1e21">
+                                <th>&nbsp;Foto</th>
+                                <th style="text-align: left;width: 30%">Nombre</th>
+                                <th style="text-align: center">Cant</th>
+                                <th style="text-align: center">Precio</th>
+                                <th style="text-align: center">Acción</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tdetalle"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" id="terminar-pedido" class="btn btn-success btn-mini" ><i class="fa fa-shopping-cart"></i> Terminar Pedido</a>
+                    <a onclick="vaciarCarrito()" class="btn btn-warning btn-mini"><i class="fa fa-trash"></i> Vaciar Lista</a>
+                    <a href="javascript:;" class="btn btn-danger btn-mini" data-dismiss="modal" ><i class="fa fa-window-close"></i> Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script src="/static/sitio/js/jquery-3.2.1.min.js"></script>
+<script src="/static/sitio/styles/bootstrap4/popper.js"></script>
+<script src="/static/sitio/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="/static/sitio/plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="/static/sitio/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="/static/sitio/plugins/easing/easing.js"></script>
+<script src="/static/sitio/js/custom.js?0.2"></script>
+<script src="/static/sitio/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/0.9.8/spin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/0.9.8/ladda.min.js"></script>
+<script src="/static/js/app.js?1.3"></script>
+
+
+
+<script>
+
+    $('.search-open').on('click', function () {
+        $('.search-inside').fadeIn();
+    });
+    $('.search-close').on('click', function () {
+        $('.search-inside').fadeOut();
+    });
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        $(function () {
+            $('#contenedor').on('click', 'a[rel="action"]', function () {
+                window.open('https://api.whatsapp.com/send?phone=+593996779679&text=Hola Popstore deseo adquirir una ');
+            });
+        });
+    } else {
+        $(function () {
+            $('#contenedor').on('click', 'a[rel="action"]', function () {
+                window.open('https://web.whatsapp.com/send?l=en&phone=+593996779679&text=Hola Popstore deseo adquirir una ');
+            });
+        });
+
+    }
+
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    const terminarPedidoBtn = document.getElementById('terminar-pedido');
+
+    cargarEventListeners();
+
+    function cargarEventListeners() {
+        terminarPedidoBtn.addEventListener('click', terminarPedido);
+    }
+
+    function terminarPedido() {
+        var cart = (JSON.parse(localStorage.getItem('cart')) != null) ? JSON.parse(localStorage.getItem('cart')) : {items: []};
+        var lista = [];
+
+        _.forEach(cart.items, function (n, key) {
+            lista.push("- *" + n.cant + "* " + n.name);
+        });
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            let url = "https://api.whatsapp.com/send?phone=+593996779679&text=Hola Popstore%0A*_Me gustaria adquirir:_*%0A" + lista.join("%0A");
+            window.open(url);
+            vaciarCarrito()
+        } else {
+            let url = "https://web.whatsapp.com/send?l=en&phone=+593996779679&text=Hola Popstore%0A*_Me gustaria adquirir:_*%0A" + lista.join("%0A");
+            window.open(url);
+            vaciarCarrito()
+        }
+    }
+
+    function vaciarCarrito() {
+        var cart = (JSON.parse(localStorage.getItem('cart')) != null) ? JSON.parse(localStorage.getItem('cart')) : {items: []};
+
+        _.remove(cart.items);
+        localStorage.setItem('cart', JSON.stringify(cart))
+        app.init()
+        app.getProducts()
+    }
+</script>
+</body>
+
+</html>
