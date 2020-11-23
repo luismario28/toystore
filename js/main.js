@@ -101,7 +101,7 @@ cerrarBtn1.addEventListener('click', (e)=> {
 		elemento.classList.remove('activo');
 	});
 	document.querySelector('body').style.overflow = 'visible';
-// 	location.href='#quienessomos';
+	location.href='#quienessomos';
 });
 
 cerrarBtn2.addEventListener('click', (e)=> {
