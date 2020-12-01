@@ -39,6 +39,7 @@ main article {
 	display: none;
     justify-content: space-between;
     margin-left: 10px;
+    width: 100%;
 }
 
 .menu .contenedor-botones-menu button {
@@ -381,6 +382,8 @@ main article {
 	}
 
 }
+
+
 
 /* .contenedormenu{
     background:#087cca;
@@ -902,6 +905,10 @@ footer{
 }
 
 @media screen and (max-width:500px){
+    .footer-padding{
+        padding: 12px 20px;
+    }
+
     nav{
         text-align: center;
         padding: 30px 0 0 0;
