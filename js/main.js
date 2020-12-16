@@ -6,6 +6,7 @@ const btnDepartamentos = document.getElementById('btn-departamentos'),
 	  cerrarBtn3 = document.getElementById('cerrar-btn3'),
 	  contenedorEnlacesNav = document.querySelector('#menu .contenedor-enlaces-nav'),
 	  contenedorSubCategorias = document.querySelector('#grid .contenedor-subcategorias'),
+	  contenedorSubCategorias2 = document.querySelector('#grid .contenedor-subcategorias2'),
 	  esDispositivoMovil = () => window.innerWidth <= 800;
 
 btnDepartamentos.addEventListener('mouseover', () => {
@@ -17,6 +18,8 @@ btnDepartamentos.addEventListener('mouseover', () => {
 grid.addEventListener('mouseleave', () => {
 	if(!esDispositivoMovil()){
 		grid.classList.remove('activo');
+		document.getElementById("subcategorias").style.display = "none";
+		document.getElementById("subcategorias2").style.display = "none";
 	}
 });
 
@@ -27,6 +30,22 @@ document.querySelectorAll('#menu .categorias a').forEach((elemento) => {
 				categoria.classList.remove('activo');
 				if(categoria.dataset.categoria == e.target.dataset.categoria){
 					categoria.classList.add('activo');
+					document.getElementById("subcategorias").style.display = "grid";
+					document.getElementById("subcategorias2").style.display = "none";
+				}
+			});
+		};
+	});
+});
+
+document.querySelectorAll('#menu .subcategoria a').forEach((elemento) => {
+	elemento.addEventListener('mouseenter', (e) => {
+		if(!esDispositivoMovil()){
+			document.querySelectorAll('#grid .subcategoria2').forEach((categoria) => {
+				categoria.classList.remove('activo');
+				if(categoria.dataset.categoria == e.target.dataset.categoria){
+					categoria.classList.add('activo');
+					document.getElementById("subcategorias2").style.display = "grid";
 				}
 			});
 		};
@@ -62,6 +81,8 @@ document.querySelector('#grid .categorias .btn-regresar').addEventListener('clic
 	btnCerrarMenu.classList.remove('activo');
 });
 
+
+
 document.querySelectorAll('#menu .categorias a').forEach((elemento) => {
 	elemento.addEventListener('click', (e) => {
 		if(esDispositivoMovil()){
@@ -70,17 +91,47 @@ document.querySelectorAll('#menu .categorias a').forEach((elemento) => {
 				categoria.classList.remove('activo');
 				if(categoria.dataset.categoria == e.target.dataset.categoria){
 					categoria.classList.add('activo');
+					document.getElementById("subcategorias").style.display = "grid";
 				}
 			});
 		}
 	});
 });
 
+document.querySelectorAll('#grid .subcategoria a').forEach((elemento) => {
+	elemento.addEventListener('click', (e) => {
+		if(esDispositivoMovil()){
+			contenedorSubCategorias2.classList.add('activo');
+			document.querySelectorAll('#grid .subcategoria2').forEach((categoria) => {
+				categoria.classList.remove('activo');
+				if(categoria.dataset.categoria == e.target.dataset.categoria){
+					categoria.classList.add('activo');
+					document.getElementById("subcategorias2").style.display = "grid";
+				}
+			});
+		}
+	});
+});
+
+
+
+
+
 // Boton de regresar en el menu de categorias
 document.querySelectorAll('#grid .contenedor-subcategorias .btn-regresar').forEach((boton) => {
 	boton.addEventListener('click', (e) => {
 		e.preventDefault();
 		contenedorSubCategorias.classList.remove('activo');
+		document.getElementById("subcategorias").style.display = "none";
+	});
+});
+
+// Boton de regresar en el menu de categorias
+document.querySelectorAll('#grid .contenedor-subcategorias2 .btn-regresar').forEach((boton) => {
+	boton.addEventListener('click', (e) => {
+		e.preventDefault();
+		contenedorSubCategorias2.classList.remove('activo');
+		document.getElementById("subcategorias2").style.display = "none";
 	});
 });
 
@@ -93,7 +144,8 @@ btnCerrarMenu.addEventListener('click', (e)=> {
 });
 
 
-	
+
+
   
 cerrarBtn1.addEventListener('click', (e)=> {
 	e.preventDefault();
