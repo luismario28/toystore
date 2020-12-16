@@ -392,14 +392,14 @@ main article {
     
     .grid .subcategoria a{
         color: #fff;
-        margin: 20px 50px 30px;
+        margin: 20px 30px 30px;
         border-bottom: 1px dotted white;
         border-radius: 10px;
     }
 
     .grid .subcategoria2 a{
         color: #fff;
-        margin: 20px 50px 30px;
+        margin: 20px 30px 30px;
         border-bottom: 1px dotted white;
         border-radius: 10px;
     }
@@ -418,7 +418,7 @@ main article {
 
     .grid .categorias a{
         color: #fff;
-        margin: 20px 50px 30px;
+        margin: 20px 30px 30px;
         border-bottom: 1px dotted white;
         border-radius: 10px;
     }
