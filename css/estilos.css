@@ -369,9 +369,11 @@ main article {
 }
 
 @media screen and (max-width: 800px) {
-	.menu .contenedormenu {
+
+    .menu .contenedormenu {
         width: 90%;
         padding: 0 10px;
+        margin: 0;
 	}
 
     .grid .categorias {
@@ -565,6 +567,13 @@ main article {
         max-height: initial;
 	}
 
+    .grid .categorias a:hover i {
+        display: none;
+    }
+
+    .grid .contenedor-subcategorias a:hover i {
+        display: none;
+    }
 }
 
 

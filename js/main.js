@@ -26,12 +26,16 @@ grid.addEventListener('mouseleave', () => {
 document.querySelectorAll('#menu .categorias a').forEach((elemento) => {
 	elemento.addEventListener('mouseenter', (e) => {
 		if(!esDispositivoMovil()){
-			document.querySelectorAll('#menu .subcategoria').forEach((categoria) => {
+			document.querySelectorAll('#grid .subcategoria').forEach((categoria) => {
 				categoria.classList.remove('activo');
+
 				if(categoria.dataset.categoria == e.target.dataset.categoria){
 					categoria.classList.add('activo');
 					document.getElementById("subcategorias").style.display = "grid";
 					document.getElementById("subcategorias2").style.display = "none";
+				}
+				if(e.target.dataset.categoria == undefined){
+					document.getElementById("subcategorias").style.display = "none";
 				}
 			});
 		};
@@ -97,6 +101,7 @@ document.querySelectorAll('#menu .categorias a').forEach((elemento) => {
 		}
 	});
 });
+
 
 document.querySelectorAll('#grid .subcategoria a').forEach((elemento) => {
 	elemento.addEventListener('click', (e) => {
