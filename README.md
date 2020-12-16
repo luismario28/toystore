@@ -1,2 +1,0 @@
-# toystore
-tiendadeprueba
