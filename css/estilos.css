@@ -371,7 +371,7 @@ main article {
 @media screen and (max-width: 800px) {
 
     .menu .contenedormenu {
-        width: 90%;
+        width: 100%;
         padding: 0 10px;
         margin: 0;
 	}
@@ -438,8 +438,8 @@ main article {
 
 	.menu .contenedor-botones-menu {
         display: flex;
-        /* width: 100%;
-        margin: 0; */
+        width: 100%;
+        margin: 0;
 	}
 
     
@@ -1115,10 +1115,11 @@ footer{
 }
 
 @media screen and (max-width:500px){
+
     .menu .contenedor-enlaces-nav {
         padding: 0 10px;
         width: 70% !important;
-      }
+    }
       
     .btn-departamentos p{
         text-align: left;
