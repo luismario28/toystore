@@ -198,3 +198,4 @@ $(".addToCart").click(function(){
 	  })
 	  
 });
+
