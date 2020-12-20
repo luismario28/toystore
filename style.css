@@ -508,6 +508,7 @@ input[type="radio"]{
   
   height: 94px;
   margin: 8px 17px;
+
 }
 
 @media screen and (max-width:1500px){
@@ -759,7 +760,7 @@ min-height: 50vh;
 }
 
 @media screen and (max-width:500px){
-  
+
   .carrito{
     display: none;
   }

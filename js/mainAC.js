@@ -178,3 +178,23 @@ cerrarBtn3.addEventListener('click', (e)=> {
 	document.querySelector('body').style.overflow = 'visible';
 	location.href='#contacto';
 });
+
+$(".addToCart").click(function(){
+	const Toast = Swal.mixin({
+		toast: true,
+		position: 'top-end',
+		showConfirmButton: false,
+		timer: 1000,
+		// timerProgressBar: true,
+		didOpen: (toast) => {
+		  toast.addEventListener('mouseenter', Swal.stopTimer)
+		  toast.addEventListener('mouseleave', Swal.resumeTimer)
+		}
+	  })
+	  
+	  Toast.fire({
+		icon: 'success',
+		title: 'Añadido al carrito'
+	  })
+	  
+});
