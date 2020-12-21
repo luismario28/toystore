@@ -210,3 +210,13 @@ window.addEventListener("scroll", () => {
     toTop.classList.remove("active");
   }
 })
+
+const toTop2 = document.querySelector(".to-top2");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    toTop2.classList.add("active");
+  } else {
+    toTop2.classList.remove("active");
+  }
+})
