@@ -122,8 +122,11 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
 
 function updateShoppingCartTotal(){
     let total = 0;
+    let totalItems = 0;
+    let descuento = 0;
+    const shoppingCartDescuento = document.querySelector('.shoppingCartDescuento');
+    const shoppingCartSubtotal = document.querySelector('.shoppingCartSubtotal');
     const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
-    
     const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');    
     
     shoppingCartItems.forEach(shoppingCartItem => {
@@ -136,8 +139,19 @@ function updateShoppingCartTotal(){
         const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity');
         const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value);
         
+        
         total = total + shoppingCartItemPrice * shoppingCartItemQuantity;    
+        totalItems = totalItems + shoppingCartItemQuantity;
     });
+    shoppingCartSubtotal.innerHTML = `$${total.toFixed(2)}`;
+    
+    if(totalItems >= 6){    
+        descuento = total * 0.10;
+        shoppingCartDescuento.innerHTML = `$${descuento.toFixed(2)}`;
+        total = total - descuento;
+        console.log(total);
+    }
+    shoppingCartDescuento.innerHTML = `$${descuento.toFixed(2)}`;
     shoppingCartTotal.innerHTML = `$${total.toFixed(2)}`;
 }
 
@@ -158,14 +172,17 @@ function quantityChanged(event){
 function addWhatsAppClicked(){
     var producto = document.getElementsByClassName('shopping-cart-item-title');
     var cantidad = document.getElementsByClassName('shopping-cart-quantity-input');
+    var precio = document.getElementsByClassName('shoppingCartItemPrice');
+    var Descuento = document.querySelector('.shoppingCartDescuento');
+    var Total = document.querySelector('.shoppingCartTotal');
     var mensaje = "Hola ToyStore deseo adquirir:%0D%0A";
     
     
     for(let i=0; i< producto.length; i++){
         
-        mensaje += cantidad[i].value + " " + producto[i].textContent + "%0D%0A";
+        mensaje += cantidad[i].value + " " + producto[i].textContent +" ("+ precio[i].textContent + " c/u)"+ "%0D%0A";
     }
-    window.open("https://api.whatsapp.com/send?phone=593984339173&text="+mensaje);
+    window.open("https://api.whatsapp.com/send?phone=593981597177&text="+mensaje+"Descuento: "+Descuento.textContent+"%0D%0A"+"Total: "+Total.textContent);
     shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
 }
