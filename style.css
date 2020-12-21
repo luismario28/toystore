@@ -767,7 +767,7 @@ min-height: 50vh;
   border-radius: 5px 0 0 5px; /* Borde del boton */
   bottom: 50%;
   right: 0px;
-  padding: 5px 11.5px !important; /* Relleno del boton */
+  padding: 10px 16.5px !important; /* Relleno del boton */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -791,9 +791,9 @@ min-height: 50vh;
   position: fixed;
   border-radius: 5px 0 0 5px; /* Borde del boton */
   bottom: 50%;
-  margin-bottom: 38px;
+  margin-bottom: 45px;
   right: 0px;
-  padding: 5px 9.5px !important; /* Relleno del boton */
+  padding: 10px 15px !important; /* Relleno del boton */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -812,12 +812,8 @@ min-height: 50vh;
   color:#ffffff;
 }
 
-<<<<<<< HEAD
 /* beta */
- 
-=======
-
->>>>>>> parent of e64cb38... beta
+/*  
 
 .btn-flotante {
 	font-size: 16px;
@@ -847,7 +843,7 @@ min-height: 50vh;
 		bottom: 20px;
 		right: 20px;
 	}
-} 
+}  */
 
 
 
