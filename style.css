@@ -791,7 +791,7 @@ min-height: 50vh;
   position: fixed;
   border-radius: 5px 0 0 5px; /* Borde del boton */
   bottom: 50%;
-  margin-bottom: 45px;
+  margin-bottom: 55px;
   right: 0px;
   padding: 10px 15px !important; /* Relleno del boton */
   display: flex;
