@@ -1,3 +1,8 @@
+document.getElementById('subtotal1').style.display = "none";
+document.getElementById('subtotal2').style.display = "none";
+document.getElementById('descuento1').style.display = "none";
+document.getElementById('descuento2').style.display = "none";
+
 const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
 addToShoppingCartButtons.forEach(addToCartButton => {
     addToCartButton.addEventListener('click', addToCartClicked);
@@ -150,6 +155,24 @@ function updateShoppingCartTotal(){
         shoppingCartDescuento.innerHTML = `$${descuento.toFixed(2)}`;
         total = total - descuento;
         console.log(total);
+        var mybr1 = document.createElement('br');
+        var mybr2 = document.createElement('br');
+
+        document.getElementById('subtotal1').style.display = "inline";
+        document.getElementById('subtotal2').style.display = "inline";
+        document.getElementById('subtotal2').appendChild(mybr2);
+
+        document.getElementById('descuento1').style.display = "inline";
+        
+        document.getElementById('descuento2').style.display = "inline";
+        document.getElementById('descuento2').appendChild(mybr1);
+        
+    }
+    else{
+        document.getElementById('subtotal1').style.display = "none";
+        document.getElementById('subtotal2').style.display = "none";
+        document.getElementById('descuento1').style.display = "none";
+        document.getElementById('descuento2').style.display = "none";
     }
     shoppingCartDescuento.innerHTML = `$${descuento.toFixed(2)}`;
     shoppingCartTotal.innerHTML = `$${total.toFixed(2)}`;
