@@ -24,7 +24,7 @@ a{
 /* Enlaces del NAV */
 /* ------------------------- */
 .menu {
-	background: #3E5777;
+	background: #2874A6;
 	padding: 5px 0;
 	margin-bottom: 0px;
 }
@@ -39,12 +39,19 @@ a{
 
 .menu .contenedor-botones-menu button {
 	font-size: 20px;
-	color: #fff;
+	color: rgb(0, 0, 0);
 	padding: 10px 20px;
 	border: 1px solid transparent;
 	display: inline-block;
 	cursor: pointer;
 	background: none;
+}
+
+.enlaces a p{
+  display: inline;
+  text-align: center;
+  align-items: center;
+  vertical-align: -2px;
 }
 
 .menu .contenedor-botones-menu button:hover {
@@ -68,7 +75,7 @@ a{
 }
 
 .menu .btn-departamentos {
-	color: #fff;
+	color: rgb(0, 0, 0);
 	padding: 7px;
 	border-radius: 3px;
 	display: flex;
@@ -108,7 +115,7 @@ a{
     text-align: left;
 }
 .menu .contenedor-enlaces-nav .enlaces a {
-    color: #ffffff;
+    color: #000000;
     border: 1px solid transparent;
     padding: 7px;
 	border-radius: 3px;
@@ -550,7 +557,9 @@ input[type="radio"]{
 }
 
 @media screen and (max-width:800px){
-
+  .iconoenlaces{
+    margin-left: 8px;
+  }
   
   .menu .contenedormenu {
     width: 100%;
@@ -559,32 +568,32 @@ input[type="radio"]{
 }
 
 .grid .categorias {
-    background: #3E5777;
+    background: #2874A6;
     width: 100%;
     text-align: center;
 }
 
 .grid .subcategoria {
-    background: #3E5777;
+    background: #2874A6;
     text-align: center;
 }
 
 .grid .subcategoria2 {
-    background: #3E5777;
+    background: #2874A6;
     text-align: center;
 }
 
 .grid .subcategoria a{
-    color: #fff;
+    color: rgb(0, 0, 0);
     margin: 20px 30px 30px;
-    border-bottom: 1px dotted white;
+    border-bottom: 1px solid rgb(173, 173, 173);
     border-radius: 10px;
 }
 
 .grid .subcategoria2 a{
-    color: #fff;
+    color: rgb(0, 0, 0);
     margin: 20px 30px 30px;
-    border-bottom: 1px dotted white;
+    border-bottom: 1px solid rgb(173, 173, 173);
     border-radius: 10px;
 }
 
@@ -601,9 +610,9 @@ input[type="radio"]{
 }
 
 .grid .categorias a{
-    color: #fff;
+    color: rgb(0, 0, 0);
     margin: 20px 30px 30px;
-    border-bottom: 1px dotted white;
+    border-bottom: 1px solid rgb(173, 173, 173);
     border-radius: 10px;
 }
 
@@ -629,11 +638,10 @@ input[type="radio"]{
 .menu .contenedor-enlaces-nav {
     padding: 20px;
 flex-direction: column;
-align-items: flex-start;
 justify-content: flex-start;
 position: fixed;
 left: 0;
-background:#3E5777;
+background: #2874A6;
 height: 100vh;
 width: 60% !important;
 z-index: 2000;
@@ -665,10 +673,13 @@ width: 100%;
 }
 
 .menu .enlaces a {
-display: block;
-margin: 20px 10px;
-padding: 10px;
+  display: block;
+  margin: 20px 10px 40px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(175, 174, 174) !important;
+  border-radius: 10px !important;
 }
+
 
 .grid {
 display: grid;
@@ -712,7 +723,7 @@ overflow: auto;
 
 .grid .contenedor-subcategorias2 {
     position: absolute;
-    background: #3E5777;
+    background: #2E86C1;
 top: 0;
 width: 100%;
 height: 100%;
@@ -757,22 +768,31 @@ min-height: 50vh;
     display: none;
 }
   
+.horario p{
+  font-size: 13px !important;
+}
+.horario h5{
+  font-size: 15px !important;
+}
+.titulo-final{
+  font-size: 15px !important;
+}
 }
 
 
 
 .to-top {
-  background: rgb(212, 4, 4);
+  background: #F1C40F;
   position: fixed;
-  border-radius: 5px 0 0 5px; /* Borde del boton */
-  bottom: 50%;
-  right: 0px;
-  padding: 10px 16.5px !important; /* Relleno del boton */
+  border-radius: 0 5px 5px 0; /* Borde del boton */
+  left: 0px;
+  padding: 12.5px 20.5px !important; /* Relleno del boton */
+  margin-bottom: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  color:#ffffff;
+  color:#000000;
   text-decoration: none;
   opacity:0;
   pointer-events: none;
@@ -783,22 +803,22 @@ min-height: 50vh;
   bottom:32px;
   pointer-events: auto;
   opacity:1;
-  color:#ffffff;
+  color:#000000;
 }
 
 .to-top2 {
-  background: rgb(212, 4, 4);
+  background:#F1C40F;
   position: fixed;
-  border-radius: 5px 0 0 5px; /* Borde del boton */
+  border-radius: 0 5px 5px 0; /* Borde del boton */
   bottom: 50%;
-  margin-bottom: 55px;
-  right: 0px;
-  padding: 10px 15px !important; /* Relleno del boton */
+  margin-bottom: 175px;
+  left: 0px;
+  padding: 8px 15px !important; /* Relleno del boton */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  color:#ffffff;
+  color:#000000;
   text-decoration: none;
   opacity:0;
   pointer-events: none;
@@ -809,41 +829,10 @@ min-height: 50vh;
   bottom:32px;
   pointer-events: auto;
   opacity:1;
-  color:#ffffff;
+  color:#000000;
 }
 
-/* beta */
-/*  
 
-.btn-flotante {
-	font-size: 16px;
-	text-transform: uppercase;
-	font-weight: bold;
-	color: #ffffff;
-  border-radius: 5px 0 0 5px;
-  margin-bottom: 55px;
-	background-color:rgb(212, 4, 4);
-	padding: 5px 10px !important;
-	position: fixed;
-	bottom: 50px;
-	right: 0px !important;
-	transition: all 300ms ease 0ms;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	z-index: 99;
-}
-.btn-flotante:hover {
-	background-color: #2c2fa5;
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
-	transform: translateY(-7px);
-}
-@media only screen and (max-width: 600px) {
- 	.btn-flotante {
-		font-size: 14px;
-		padding: 12px 20px;
-		bottom: 20px;
-		right: 20px;
-	}
-}  */
 
 
 
@@ -948,7 +937,7 @@ min-height: 50vh;
 
 
 footer{
-  background: #3E5777;
+  background: #2874A6;
   padding: 20px 60px;
 }
 
@@ -965,19 +954,22 @@ footer{
 
 .horario{
   text-align: right;
-  color: #fff;
+  color: rgb(0, 0, 0);
   padding: 0;
   margin-right: 3px;
 }
 
 .horario h5{
-  font-size: 13.28px;
+  font-size: 15px;
+  font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
 }
 
 .horario p{
-  padding-bottom: 2px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .hora{
@@ -992,9 +984,10 @@ footer{
 }
 
 .titulo-final{
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #fff;
+  color: rgb(0, 0, 0);
   margin: 9px 0 0 0;
 }
 
