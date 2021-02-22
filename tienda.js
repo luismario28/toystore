@@ -2,6 +2,24 @@ document.getElementById('subtotal1').style.display = "none";
 document.getElementById('subtotal2').style.display = "none";
 document.getElementById('descuento1').style.display = "none";
 document.getElementById('descuento2').style.display = "none";
+document.getElementById('btn-left').disabled = true;
+document.getElementById('btn-left').style.cursor = "not-allowed";
+document.getElementById('btn-page1').disabled = true;
+document.getElementById('btn-page1').style.cursor = "not-allowed";
+document.getElementById('btn-page1').style.background = "#0072CE";
+document.getElementById('p6').style.display = "none";
+document.getElementById('p7').style.display = "none";
+document.getElementById('p8').style.display = "none";
+document.getElementById('p9').style.display = "none";
+document.getElementById('p10').style.display = "none";
+document.getElementById('p11').style.display = "none";
+document.getElementById('p12').style.display = "none";
+document.getElementById('p13').style.display = "none";
+document.getElementById('p14').style.display = "none";
+document.getElementById('p15').style.display = "none";
+
+
+
 
 const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
 addToShoppingCartButtons.forEach(addToCartButton => {
@@ -11,6 +29,16 @@ addToShoppingCartButtons.forEach(addToCartButton => {
 const comprarButton = document.querySelectorAll('.comprarButton');
 comprarButton.forEach(addWhatsApp => {
     addWhatsApp.addEventListener('click', addWhatsAppClicked);
+});
+
+const bLeft = document.querySelectorAll('.to-left');
+bLeft.forEach(Left => {
+    Left.addEventListener('click', (ActionLeft));
+});
+
+const bRight = document.querySelectorAll('.to-right');
+bRight.forEach(Right => {
+    Right.addEventListener('click', (ActionRight));
 });
 
 const goPage1 = document.querySelectorAll('.pagina1');
@@ -262,80 +290,154 @@ function addWhatsAppClicked(){
 
 function llamarPagina1(){
     
+    window.scroll(0,0); //Hacer scroll al inicio
+
+    //Deshabilitar botonleft y boton1
+    document.getElementById('btn-left').disabled = true;
+    document.getElementById('btn-left').style.cursor = "not-allowed";
+    document.getElementById('btn-left').style.background = "#e6e4e4";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    document.getElementById('btn-page1').disabled = true;
+    document.getElementById('btn-page1').style.cursor = "not-allowed";
+    document.getElementById('btn-page1').style.border = "none";
+    
+
+    //Habilitar los demas botones
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').style.background = "#0070cc";
+    
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
+
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
-    document.getElementById('btn-page1').style.background = "#337AB7";
+    document.getElementById('btn-page1').style.background = "#0070cc";
     document.getElementById('btn-page1').style.color = "#fff";
-    document.getElementById('btn-page1').style.fontWeight = "bold";
 
     
 
@@ -360,81 +462,153 @@ function llamarPagina1(){
 
 function llamarPagina2(){
     
+    window.scroll(0,0);
+
+    document.getElementById('btn-page2').disabled = true;
+    document.getElementById('btn-page2').style.cursor = "not-allowed";
+    document.getElementById('btn-page2').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
-    document.getElementById('btn-page2').style.background = "#337AB7";
+    document.getElementById('btn-page2').style.background = "#0070cc";
     document.getElementById('btn-page2').style.color = "#fff";
-    document.getElementById('btn-page2').style.fontWeight = "bold";
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "block";
@@ -452,85 +626,166 @@ function llamarPagina2(){
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
 
+
+
+
+    document.getElementById('p1').style.display = "inline-block";
+    document.getElementById('p6').style.display = "none";
+
 }
 
 function llamarPagina3(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page3').disabled = true;
+    document.getElementById('btn-page3').style.cursor = "not-allowed";
+    document.getElementById('btn-page3').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
-    document.getElementById('btn-page3').style.background = "#337AB7";
+    document.getElementById('btn-page3').style.background = "#0070cc";
     document.getElementById('btn-page3').style.color = "#fff";
-    document.getElementById('btn-page3').style.fontWeight = "bold";
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -547,85 +802,164 @@ function llamarPagina3(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+
+    document.getElementById('p1').style.display = "inline-block";
+    document.getElementById('p2').style.display = "inline-block";
+    document.getElementById('p6').style.display = "none";
+    document.getElementById('p7').style.display = "none";
 }
 
 function llamarPagina4(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page4').disabled = true;
+    document.getElementById('btn-page4').style.cursor = "not-allowed";
+    document.getElementById('btn-page4').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
-    document.getElementById('btn-page4').style.background = "#337AB7";
+    document.getElementById('btn-page4').style.background = "#0070cc";
     document.getElementById('btn-page4').style.color = "#fff";
-    document.getElementById('btn-page4').style.fontWeight = "bold";
+
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -642,85 +976,168 @@ function llamarPagina4(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+
+
+    document.getElementById('p1').style.display = "none";
+    document.getElementById('p7').style.display = "none";
+    document.getElementById('p8').style.display = "none";
+    document.getElementById('p2').style.display = "inline-block";
+    document.getElementById('p3').style.display = "inline-block";
+    document.getElementById('p6').style.display = "inline-block";
 }
 
 function llamarPagina5(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page5').disabled = true;
+    document.getElementById('btn-page5').style.cursor = "not-allowed";
+    document.getElementById('btn-page5').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
-    document.getElementById('btn-page5').style.background = "#337AB7";
+    document.getElementById('btn-page5').style.background = "#0070cc";
     document.getElementById('btn-page5').style.color = "#fff";
-    document.getElementById('btn-page5').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -738,86 +1155,169 @@ function llamarPagina5(){
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
 
+
+
+    document.getElementById('p1').style.display = "none";
+    document.getElementById('p2').style.display = "none";
+    document.getElementById('p8').style.display = "none";
+    document.getElementById('p9').style.display = "none";
+    document.getElementById('p6').style.display = "inline-block";
+    document.getElementById('p7').style.display = "inline-block";
+    document.getElementById('p3').style.display = "inline-block";
+    document.getElementById('p4').style.display = "inline-block";
 }
 
 function llamarPagina6(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page6').disabled = true;
+    document.getElementById('btn-page6').style.cursor = "not-allowed";
+    document.getElementById('btn-page6').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page6').style.background = "#337AB7";
+    document.getElementById('btn-page6').style.background = "#0070cc";
     document.getElementById('btn-page6').style.color = "#fff";
-    document.getElementById('btn-page6').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -834,86 +1334,170 @@ function llamarPagina6(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+    document.getElementById('p7').style.display = "inline-block";
+    document.getElementById('p8').style.display = "inline-block";
+    document.getElementById('p4').style.display = "inline-block";
+    document.getElementById('p5').style.display = "inline-block";
+    document.getElementById('p2').style.display = "none";
+    document.getElementById('p3').style.display = "none";
+    document.getElementById('p9').style.display = "none";
+    document.getElementById('p10').style.display = "none";
 }
 
 function llamarPagina7(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page7').disabled = true;
+    document.getElementById('btn-page7').style.cursor = "not-allowed";
+    document.getElementById('btn-page7').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page7').style.background = "#337AB7";
+    document.getElementById('btn-page7').style.background = "#0070cc";
     document.getElementById('btn-page7').style.color = "#fff";
-    document.getElementById('btn-page7').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -930,86 +1514,168 @@ function llamarPagina7(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+    document.getElementById('p8').style.display = "inline-block";
+    document.getElementById('p9').style.display = "inline-block";
+    document.getElementById('p6').style.display = "inline-block";
+    document.getElementById('p5').style.display = "inline-block";
+    document.getElementById('p3').style.display = "none";
+    document.getElementById('p4').style.display = "none";
+    document.getElementById('p10').style.display = "none";
+    document.getElementById('p11').style.display = "none";
 }
 
 function llamarPagina8(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page8').disabled = true;
+    document.getElementById('btn-page8').style.cursor = "not-allowed";
+    document.getElementById('btn-page8').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page8').style.background = "#337AB7";
+    document.getElementById('btn-page8').style.background = "#0070cc";
     document.getElementById('btn-page8').style.color = "#fff";
-    document.getElementById('btn-page8').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -1026,86 +1692,169 @@ function llamarPagina8(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+    document.getElementById('p7').style.display = "inline-block";
+    document.getElementById('p6').style.display = "inline-block";
+    document.getElementById('p9').style.display = "inline-block";
+    document.getElementById('p10').style.display = "inline-block";
+    document.getElementById('p4').style.display = "none";
+    document.getElementById('p5').style.display = "none";
+    document.getElementById('p11').style.display = "none";
+    document.getElementById('p12').style.display = "none";
 }
 
 function llamarPagina9(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page9').disabled = true;
+    document.getElementById('btn-page9').style.cursor = "not-allowed";
+    document.getElementById('btn-page9').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page9').style.background = "#337AB7";
+    document.getElementById('btn-page9').style.background = "#0070cc";
     document.getElementById('btn-page9').style.color = "#fff";
-    document.getElementById('btn-page9').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -1122,86 +1871,172 @@ function llamarPagina9(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+    document.getElementById('p8').style.display = "inline-block";
+    document.getElementById('p7').style.display = "inline-block";
+    document.getElementById('p10').style.display = "inline-block";
+    document.getElementById('p11').style.display = "inline-block";
+    document.getElementById('p6').style.display = "none";
+    document.getElementById('p5').style.display = "none";
+    document.getElementById('p12').style.display = "none";
+    document.getElementById('p13').style.display = "none";
+
 }
 
 function llamarPagina10(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page10').disabled = true;
+    document.getElementById('btn-page10').style.cursor = "not-allowed";
+    document.getElementById('btn-page10').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page10').style.background = "#337AB7";
+    document.getElementById('btn-page10').style.background = "#0070cc";
     document.getElementById('btn-page10').style.color = "#fff";
-    document.getElementById('btn-page10').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -1218,86 +2053,169 @@ function llamarPagina10(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+
+    document.getElementById('p9').style.display = "inline-block";
+    document.getElementById('p8').style.display = "inline-block";
+    document.getElementById('p11').style.display = "inline-block";
+    document.getElementById('p12').style.display = "inline-block";
+    document.getElementById('p7').style.display = "none";
+    document.getElementById('p6').style.display = "none";
+    document.getElementById('p13').style.display = "none";
+    document.getElementById('p14').style.display = "none";
 }
 
 function llamarPagina11(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page11').disabled = true;
+    document.getElementById('btn-page11').style.cursor = "not-allowed";
+    document.getElementById('btn-page11').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page11').style.background = "#337AB7";
+    document.getElementById('btn-page11').style.background = "#0070cc";
     document.getElementById('btn-page11').style.color = "#fff";
-    document.getElementById('btn-page11').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -1314,86 +2232,169 @@ function llamarPagina11(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+
+    document.getElementById('p10').style.display = "inline-block";
+    document.getElementById('p9').style.display = "inline-block";
+    document.getElementById('p12').style.display = "inline-block";
+    document.getElementById('p13').style.display = "inline-block";
+    document.getElementById('p8').style.display = "none";
+    document.getElementById('p7').style.display = "none";
+    document.getElementById('p14').style.display = "none";
+    document.getElementById('p15').style.display = "none";
 }
 
 function llamarPagina12(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page12').disabled = true;
+    document.getElementById('btn-page12').style.cursor = "not-allowed";
+    document.getElementById('btn-page12').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page12').style.background = "#337AB7";
+    document.getElementById('btn-page12').style.background = "#0070cc";
     document.getElementById('btn-page12').style.color = "#fff";
-    document.getElementById('btn-page12').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -1410,86 +2411,169 @@ function llamarPagina12(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+
+
+    document.getElementById('p11').style.display = "inline-block";
+    document.getElementById('p10').style.display = "inline-block";
+    document.getElementById('p13').style.display = "inline-block";
+    document.getElementById('p14').style.display = "inline-block";
+    document.getElementById('p9').style.display = "none";
+    document.getElementById('p8').style.display = "none";
+    document.getElementById('p15').style.display = "none";
 }
 
 function llamarPagina13(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page13').disabled = true;
+    document.getElementById('btn-page13').style.cursor = "not-allowed";
+    document.getElementById('btn-page13').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page13').style.background = "#337AB7";
+    document.getElementById('btn-page13').style.background = "#0070cc";
     document.getElementById('btn-page13').style.color = "#fff";
-    document.getElementById('btn-page13').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -1506,87 +2590,169 @@ function llamarPagina13(){
     document.getElementById('catalogo13').style.display = "block";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "none";
+
+
+
+    document.getElementById('p12').style.display = "inline-block";
+    document.getElementById('p11').style.display = "inline-block";
+    document.getElementById('p14').style.display = "inline-block";
+    document.getElementById('p15').style.display = "inline-block";
+    document.getElementById('p10').style.display = "none";
+    document.getElementById('p9').style.display = "none";
 }
 
 
 function llamarPagina14(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page14').disabled = true;
+    document.getElementById('btn-page14').style.cursor = "not-allowed";
+    document.getElementById('btn-page14').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = false;
+    document.getElementById('btn-right').style.cursor = "pointer";
+    document.getElementById('btn-right').style.background = "#0070cc";
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page15').disabled = false;
+    document.getElementById('btn-page15').style.cursor = "pointer";
+    document.getElementById('btn-page15').classList.add('HoverClass1');
+
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page15').style.background = "initial";
-    document.getElementById('btn-page15').style.color = "#337AB7";
+    document.getElementById('btn-page15').style.color = "#000";
     document.getElementById('btn-page15').style.fontWeight = "initial";
     document.getElementById('btn-page15').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page14').style.background = "#337AB7";
+    document.getElementById('btn-page14').style.background = "#0070cc";
     document.getElementById('btn-page14').style.color = "#fff";
-    document.getElementById('btn-page14').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -1603,86 +2769,167 @@ function llamarPagina14(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "block";
     document.getElementById('catalogo15').style.display = "none";
+
+
+
+    document.getElementById('p13').style.display = "inline-block";
+    document.getElementById('p12').style.display = "inline-block";
+    document.getElementById('p15').style.display = "inline-block";
+    document.getElementById('p10').style.display = "none";
 }
 
 function llamarPagina15(){
     
+    window.scroll(0,0);
+    document.getElementById('btn-page15').disabled = true;
+    document.getElementById('btn-page15').style.cursor = "not-allowed";
+    document.getElementById('btn-page15').style.border = "none";
+    
+    
+    document.getElementById('btn-left').disabled = false;
+    document.getElementById('btn-left').style.cursor = "pointer";
+    document.getElementById('btn-left').style.background = "#0070cc";
+    document.getElementById('btn-right').disabled = true;
+    document.getElementById('btn-right').style.cursor = "not-allowed";
+    document.getElementById('btn-right').style.background = "#e6e4e4";
+
+    
+    document.getElementById('btn-page1').disabled = false;
+    document.getElementById('btn-page1').style.cursor = "pointer";
+    document.getElementById('btn-page1').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page2').disabled = false;
+    document.getElementById('btn-page2').style.cursor = "pointer";
+    document.getElementById('btn-page2').classList.add('HoverClass1');
+
+    document.getElementById('btn-page3').disabled = false;
+    document.getElementById('btn-page3').style.cursor = "pointer";
+    document.getElementById('btn-page3').classList.add('HoverClass1');
+
+    document.getElementById('btn-page4').disabled = false;
+    document.getElementById('btn-page4').style.cursor = "pointer";
+    document.getElementById('btn-page4').classList.add('HoverClass1');
+
+    document.getElementById('btn-page5').disabled = false;
+    document.getElementById('btn-page5').style.cursor = "pointer";
+    document.getElementById('btn-page5').classList.add('HoverClass1');
+
+    document.getElementById('btn-page6').disabled = false;
+    document.getElementById('btn-page6').style.cursor = "pointer";
+    document.getElementById('btn-page6').classList.add('HoverClass1');
+
+    document.getElementById('btn-page7').disabled = false;
+    document.getElementById('btn-page7').style.cursor = "pointer";
+    document.getElementById('btn-page7').classList.add('HoverClass1');
+
+    document.getElementById('btn-page8').disabled = false;
+    document.getElementById('btn-page8').style.cursor = "pointer";
+    document.getElementById('btn-page8').classList.add('HoverClass1');
+
+    document.getElementById('btn-page9').disabled = false;
+    document.getElementById('btn-page9').style.cursor = "pointer";
+    document.getElementById('btn-page9').classList.add('HoverClass1');
+
+    document.getElementById('btn-page10').disabled = false;
+    document.getElementById('btn-page10').style.cursor = "pointer";
+    document.getElementById('btn-page10').classList.add('HoverClass1');
+
+    document.getElementById('btn-page11').disabled = false;
+    document.getElementById('btn-page11').style.cursor = "pointer";
+    document.getElementById('btn-page11').classList.add('HoverClass1');
+
+    document.getElementById('btn-page12').disabled = false;
+    document.getElementById('btn-page12').style.cursor = "pointer";
+    document.getElementById('btn-page12').classList.add('HoverClass1');
+
+    document.getElementById('btn-page13').disabled = false;
+    document.getElementById('btn-page13').style.cursor = "pointer";
+    document.getElementById('btn-page13').classList.add('HoverClass1');
+    
+    document.getElementById('btn-page14').disabled = false;
+    document.getElementById('btn-page14').style.cursor = "pointer";
+    document.getElementById('btn-page14').classList.add('HoverClass1');
+
+
+
+
+
     document.getElementById('btn-page1').style.background = "initial";
-    document.getElementById('btn-page1').style.color = "#337AB7";
+    document.getElementById('btn-page1').style.color = "#000";
     document.getElementById('btn-page1').style.fontWeight = "initial";
     document.getElementById('btn-page1').classList.add('HoverClass1');
 
     document.getElementById('btn-page2').style.background = "initial";
-    document.getElementById('btn-page2').style.color = "#337AB7";
+    document.getElementById('btn-page2').style.color = "#000";
     document.getElementById('btn-page2').style.fontWeight = "initial";
     document.getElementById('btn-page2').classList.add('HoverClass1');
 
     document.getElementById('btn-page3').style.background = "initial";
-    document.getElementById('btn-page3').style.color = "#337AB7";
+    document.getElementById('btn-page3').style.color = "#000";
     document.getElementById('btn-page3').style.fontWeight = "initial";
     document.getElementById('btn-page3').classList.add('HoverClass1');
 
     document.getElementById('btn-page4').style.background = "initial";
-    document.getElementById('btn-page4').style.color = "#337AB7";
+    document.getElementById('btn-page4').style.color = "#000";
     document.getElementById('btn-page4').style.fontWeight = "initial";
     document.getElementById('btn-page4').classList.add('HoverClass1');
 
     document.getElementById('btn-page5').style.background = "initial";
-    document.getElementById('btn-page5').style.color = "#337AB7";
+    document.getElementById('btn-page5').style.color = "#000";
     document.getElementById('btn-page5').style.fontWeight = "initial";
     document.getElementById('btn-page5').classList.add('HoverClass1');
 
     document.getElementById('btn-page6').style.background = "initial";
-    document.getElementById('btn-page6').style.color = "#337AB7";
+    document.getElementById('btn-page6').style.color = "#000";
     document.getElementById('btn-page6').style.fontWeight = "initial";
     document.getElementById('btn-page6').classList.add('HoverClass1');
 
     document.getElementById('btn-page7').style.background = "initial";
-    document.getElementById('btn-page7').style.color = "#337AB7";
+    document.getElementById('btn-page7').style.color = "#000";
     document.getElementById('btn-page7').style.fontWeight = "initial";
     document.getElementById('btn-page7').classList.add('HoverClass1');
 
     document.getElementById('btn-page8').style.background = "initial";
-    document.getElementById('btn-page8').style.color = "#337AB7";
+    document.getElementById('btn-page8').style.color = "#000";
     document.getElementById('btn-page8').style.fontWeight = "initial";
     document.getElementById('btn-page8').classList.add('HoverClass1');
 
     document.getElementById('btn-page9').style.background = "initial";
-    document.getElementById('btn-page9').style.color = "#337AB7";
+    document.getElementById('btn-page9').style.color = "#000";
     document.getElementById('btn-page9').style.fontWeight = "initial";
     document.getElementById('btn-page9').classList.add('HoverClass1');
 
     document.getElementById('btn-page10').style.background = "initial";
-    document.getElementById('btn-page10').style.color = "#337AB7";
+    document.getElementById('btn-page10').style.color = "#000";
     document.getElementById('btn-page10').style.fontWeight = "initial";
     document.getElementById('btn-page10').classList.add('HoverClass1');
 
     document.getElementById('btn-page11').style.background = "initial";
-    document.getElementById('btn-page11').style.color = "#337AB7";
+    document.getElementById('btn-page11').style.color = "#000";
     document.getElementById('btn-page11').style.fontWeight = "initial";
     document.getElementById('btn-page11').classList.add('HoverClass1');
 
     document.getElementById('btn-page12').style.background = "initial";
-    document.getElementById('btn-page12').style.color = "#337AB7";
+    document.getElementById('btn-page12').style.color = "#000";
     document.getElementById('btn-page12').style.fontWeight = "initial";
     document.getElementById('btn-page12').classList.add('HoverClass1');
 
     document.getElementById('btn-page13').style.background = "initial";
-    document.getElementById('btn-page13').style.color = "#337AB7";
+    document.getElementById('btn-page13').style.color = "#000";
     document.getElementById('btn-page13').style.fontWeight = "initial";
     document.getElementById('btn-page13').classList.add('HoverClass1');
 
     document.getElementById('btn-page14').style.background = "initial";
-    document.getElementById('btn-page14').style.color = "#337AB7";
+    document.getElementById('btn-page14').style.color = "#000";
     document.getElementById('btn-page14').style.fontWeight = "initial";
     document.getElementById('btn-page14').classList.add('HoverClass1');
 
 
 
 
-    document.getElementById('btn-page15').style.background = "#337AB7";
+    document.getElementById('btn-page15').style.background = "#0070cc";
     document.getElementById('btn-page15').style.color = "#fff";
-    document.getElementById('btn-page15').style.fontWeight = "bold";
+    
 
     document.getElementById('catalogo1').style.display = "none";
     document.getElementById('catalogo2').style.display = "none";
@@ -1699,4 +2946,128 @@ function llamarPagina15(){
     document.getElementById('catalogo13').style.display = "none";
     document.getElementById('catalogo14').style.display = "none";
     document.getElementById('catalogo15').style.display = "block";
+
+
+
+    document.getElementById('p14').style.display = "inline-block";
+    document.getElementById('p13').style.display = "inline-block";
+}
+
+function ActionRight(){
+    if($('#catalogo1').is(':Visible')){
+        llamarPagina2();
+        return;
+    }
+    if($('#catalogo2').is(':Visible')){
+        llamarPagina3();
+        return;
+    }
+    if($('#catalogo3').is(':Visible')){
+        llamarPagina4();
+        return;
+    }
+    if($('#catalogo4').is(':Visible')){
+        llamarPagina5();
+        return;
+    }
+    if($('#catalogo5').is(':Visible')){
+        llamarPagina6();
+        return;
+    }
+    if($('#catalogo6').is(':Visible')){
+        llamarPagina7();
+        return;
+    }
+    if($('#catalogo7').is(':Visible')){
+        llamarPagina8();
+        return;
+    }
+    if($('#catalogo8').is(':Visible')){
+        llamarPagina9();
+        return;
+    }
+    if($('#catalogo9').is(':Visible')){
+        llamarPagina10();
+        return;
+    }
+    if($('#catalogo10').is(':Visible')){
+        llamarPagina11();
+        return;
+    }
+    if($('#catalogo11').is(':Visible')){
+        llamarPagina12();
+        return;
+    }
+    if($('#catalogo12').is(':Visible')){
+        llamarPagina13();
+        return;
+    }
+    if($('#catalogo13').is(':Visible')){
+        llamarPagina14();
+        return;
+    }
+    if($('#catalogo14').is(':Visible')){
+        llamarPagina15();
+        return;
+    }
+}
+
+
+function ActionLeft(){
+    if($('#catalogo2').is(':Visible')){
+        llamarPagina1();
+        return;
+    }
+    if($('#catalogo3').is(':Visible')){
+        llamarPagina2();
+        return;
+    }
+    if($('#catalogo4').is(':Visible')){
+        llamarPagina3();
+        return;
+    }
+    if($('#catalogo5').is(':Visible')){
+        llamarPagina4();
+        return;
+    }
+    if($('#catalogo6').is(':Visible')){
+        llamarPagina5();
+        return;
+    }
+    if($('#catalogo7').is(':Visible')){
+        llamarPagina6();
+        return;
+    }
+    if($('#catalogo8').is(':Visible')){
+        llamarPagina7();
+        return;
+    }
+    if($('#catalogo9').is(':Visible')){
+        llamarPagina8();
+        return;
+    }
+    if($('#catalogo10').is(':Visible')){
+        llamarPagina9();
+        return;
+    }
+    if($('#catalogo11').is(':Visible')){
+        llamarPagina10();
+        return;
+    }
+    if($('#catalogo12').is(':Visible')){
+        llamarPagina11();
+        return;
+    }
+    if($('#catalogo13').is(':Visible')){
+        llamarPagina12();
+        return;
+    }
+    if($('#catalogo14').is(':Visible')){
+        llamarPagina13();
+        return;
+    }
+    if($('#catalogo15').is(':Visible')){
+        llamarPagina14();
+        return;
+    }
 }

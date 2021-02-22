@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/36c8e15300.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
-    
-    
-
 </head>
 
 <body>
@@ -49,9 +46,7 @@
 
                         <a href="Allcatalogo.html">Todos los productos</a>
                         <a href="#" data-categoria="figuras-de-accion">Figuras de acción <i class="fas fa-angle-right"></i></a>
-                        <a href="#" data-categoria="tecnologia">Tecnología <i class="fas fa-angle-right"></i></a>
                         <a href="#" data-categoria="legos">Legos <i class="fas fa-angle-right"></i></a>
-                        <a href="#" data-categoria="otros">Accesorios <i class="fas fa-angle-right"></i></a>
                     </div>
                     
                     <div class="contenedor-subcategorias" id="subcategorias">
@@ -59,20 +54,10 @@
                         <div class="subcategoria" data-categoria="figuras-de-accion">
                             <div class="enlaces-subcategoria">
                                 <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
-                                <h3 class="subtitulo">FIFURAS DE ACCIÓN</h3>
+                                <h3 class="subtitulo">FIFURAS</h3>
                                 <a href="#" data-categoria="anime">Anime <i class="fas fa-angle-right"></i></a>
                                 <a href="#" data-categoria="marvel">Marvel <i class="fas fa-angle-right"></i></a>
                                 <a href="#" data-categoria="dc">DC Comics <i class="fas fa-angle-right"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="subcategoria " data-categoria="tecnologia">
-                            <div class="enlaces-subcategoria">
-                                <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
-                                <h3 class="subtitulo">TECNOLOGÍA</h3>
-                                <a href="#">Consolas</a>
-                                <a href="#">Celulares</a>
-                                <a href="#">Teclados</a>
                             </div>
                         </div>
 
@@ -86,16 +71,7 @@
                                 <a href="#">Jurassic World</a>
                             </div>
                         </div>
-
-                        <div class="subcategoria" data-categoria="otros">
-                            <div class="enlaces-subcategoria">
-                                <button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
-                                <h3 class="subtitulo">ACCESORIOS</h3>
-                                <a href="#">Mochilas</a>
-                                <a href="#">Pulseras</a>
-                                <a href="#">Peluches</a>
-                            </div>
-                        </div>    
+                        
                     </div>
                     <div class="contenedor-subcategorias2" id="subcategorias2">
                         <div class="subcategoria2" data-categoria="anime">
@@ -2335,21 +2311,27 @@
         <section class="paginacion">
             <div class="contenedor cont-paginacion">
                 <ul>
-                    <li><a id="btn-page1" class="pagina1" href="#">1</a></li>
-                    <li><a id="btn-page2" class="pagina2" href="#">2</a></li>
-                    <li><a id="btn-page3" class="pagina3" href="#">3</a></li>
-                    <li><a id="btn-page4" class="pagina4" href="#">4</a></li>
-                    <li><a id="btn-page5" class="pagina5" href="#">5</a></li>
-                    <li><a id="btn-page6" class="pagina6" href="#">6</a></li>
-                    <li><a id="btn-page7" class="pagina7" href="#">7</a></li>
-                    <li><a id="btn-page8" class="pagina8" href="#">8</a></li>
-                    <li><a id="btn-page9" class="pagina9" href="#">9</a></li>
-                    <li><a id="btn-page10" class="pagina10" href="#">10</a></li>
-                    <li><a id="btn-page11" class="pagina11" href="#">11</a></li>
-                    <li><a id="btn-page12" class="pagina12" href="#">12</a></li>
-                    <li><a id="btn-page13" class="pagina13" href="#">13</a></li>
-                    <li><a id="btn-page14" class="pagina14" href="#">14</a></li>
-                    <li><a id="btn-page15" class="pagina15" href="#">15</a></li>
+                    <button href="#" class="to-left" id="btn-left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <li id="p1"><button id="btn-page1" class="pagina1" href="#">1</button></li>
+                    <li id="p2"><button id="btn-page2" class="pagina2" href="#">2</button></li>
+                    <li id="p3"><button id="btn-page3" class="pagina3" href="#">3</button></li>
+                    <li id="p4"><button id="btn-page4" class="pagina4" href="#">4</button></li>
+                    <li id="p5"><button id="btn-page5" class="pagina5" href="#">5</button></li>
+                    <li id="p6"><button id="btn-page6" class="pagina6" href="#">6</button></li>
+                    <li id="p7"><button id="btn-page7" class="pagina7" href="#">7</button></li>
+                    <li id="p8"><button id="btn-page8" class="pagina8" href="#">8</button></li>
+                    <li id="p9"><button id="btn-page9" class="pagina9" href="#">9</button></li>
+                    <li id="p10"><button id="btn-page10" class="pagina10" href="#">10</button></li>
+                    <li id="p11"><button id="btn-page11" class="pagina11" href="#">11</button></li>
+                    <li id="p12"><button id="btn-page12" class="pagina12" href="#">12</button></li>
+                    <li id="p13"><button id="btn-page13" class="pagina13" href="#">13</button></li>
+                    <li id="p14"><button id="btn-page14" class="pagina14" href="#">14</button></li>
+                    <li id="p15"><button id="btn-page15" class="pagina15" href="#">15</button></li>
+                    <button href="#" class="to-right" id="btn-right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </ul>
             </div>
         </section>
@@ -2358,7 +2340,7 @@
         START SECTION SHOPPING CART -->
         <section id="carrito" class="shopping-cart">
             <div class="contenedor">
-                <h1 class="text-center">CARRITO</h1>
+                <h3 class="text-center">CARRITO</h3>
                 <p class="mb-0">Por más de 6 artículos obtén -10%</p>
                 <hr>
                 <div class="row">
@@ -2419,13 +2401,13 @@
         <!-- START FOOTER -->
         <!-- beta -->
     </main>
-    <a href="#carrito" class="btn-flotante"></a>
+
     <a href="#" class="to-top">
         <i class="fas fa-chevron-up"></i>
     </a>
 
     <a href="#carrito" class="to-top2">
-        <img src="images/carrito.png" alt="">
+        <img src="images/carritoblack.png" alt="">
     </a>
     <script src="js/mainAC.js"></script>
     <footer class="footer-padding">

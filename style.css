@@ -24,7 +24,7 @@ a{
 /* Enlaces del NAV */
 /* ------------------------- */
 .menu {
-	background:  #4173b6;
+	background:  #00439c;
 	padding: 5px 0;
 	margin-bottom: 0px;
 }
@@ -39,7 +39,7 @@ a{
 
 .menu .contenedor-botones-menu button {
 	font-size: 20px;
-	color: rgb(0, 0, 0);
+	color: #e3e3e3;
 	padding: 10px 20px;
 	border: 1px solid transparent;
 	display: inline-block;
@@ -52,6 +52,7 @@ a{
   text-align: center;
   align-items: center;
   vertical-align: -2px;
+  color: #e3e3e3;
 }
 
 .menu .contenedor-botones-menu button:hover {
@@ -87,6 +88,7 @@ a{
 
 .menu .btn-departamentos p{
   margin: 0;
+  color: #e3e3e3;
 }
 
 .logotamaño{
@@ -98,6 +100,7 @@ a{
 	margin-left: 20px;
 	position: relative;
 	bottom: 3px;
+  color: #e3e3e3;
 }
 
 .menu .btn-departamentos:hover {
@@ -108,6 +111,7 @@ a{
 	display: block;
 	font-size: 14px;
 	font-weight: bold;
+  color: #e3e3e3;
 }
 .enlaces{
     display: block;
@@ -135,7 +139,7 @@ a{
 }
 
 .grid {
-	width: 50%;
+	width: 40%;
 	display: none;
 	position: absolute;
 	top: 5px;
@@ -190,7 +194,8 @@ a{
     grid-area: categorias;
     padding: 10px 0;
     overflow: auto;
-    background: whitesmoke;
+    background: rgb(255, 255, 255);
+    min-height: 200px;
 }
 
 .grid .categorias .subtitulo {
@@ -203,7 +208,7 @@ a{
 	display: flex;
     justify-content: space-between;
     margin: 5px;
-    padding: 10px 20px;
+    padding: 10px 20px 7px;
 }
 
 .grid .categorias a i {
@@ -227,18 +232,18 @@ a{
     grid-area: subcategorias;
     display: none;
     padding: 0;
-	  min-height: 220px;
+	  /* min-height: 220px; */
     overflow: auto;
-    background: whitesmoke;
+    background: rgb(255, 255, 255);
 }
 
 .grid .contenedor-subcategorias2 {
     grid-area: subcategorias;
     display: none;
     padding: 0;
-	  min-height: 220px;
+	  /* min-height: 220px; */
     overflow: auto;
-    background: whitesmoke;
+    background: rgb(255, 255, 255);
 }
 
 .grid .contenedor-subcategorias a {
@@ -246,7 +251,7 @@ a{
 	font-size: 14px;
 	display: flex !important;
 	justify-content: space-between;
-	padding: 10px 20px;
+	padding: 10px 20px 5px;
 }
 
 .grid .contenedor-subcategorias2 a {
@@ -254,7 +259,7 @@ a{
 	font-size: 14px;
 	display: flex !important;
 	justify-content: space-between;
-	padding: 10px 20px;
+	padding: 10px 20px 5px;
 }
 
 .grid .contenedor-subcategorias a:hover {
@@ -311,14 +316,14 @@ a{
 .grid .enlaces-subcategoria {
 	padding: 10px 0;
 	height: 100%;
-	max-height: 300px;
+	/* max-height: 300px; */
 	overflow: auto;
 }
 
 .grid .enlaces-subcategoria2 {
 	padding: 10px 0;
 	height: 100%;
-	max-height: 300px;
+	/* max-height: 300px; */
 	overflow: auto;
 }
 
@@ -326,14 +331,14 @@ a{
 	color: #000;
 	display: block;
 	font-size: 14px;
-	padding: 10px 20px;
+	padding: 10px 20px 5px;
 }
 
 .grid .enlaces-subcategoria2 a {
 	color: #000;
 	display: block;
 	font-size: 14px;
-	padding: 10px 20px;
+	padding: 10px 20px 5px;
 }
 
 .grid .enlaces-subcategoria a:hover {
@@ -348,7 +353,8 @@ a{
 	font-size: 18px;
 	font-weight: normal;
 	color: #DD1E21;
-	padding: 10px 20px;
+	padding: 5px 20px;
+  margin-bottom: 0px;
 }
 
 
@@ -438,34 +444,44 @@ input[type="radio"]{
 
 
 .paginacion {
-	margin:20px 0;
+	margin:60px 0 30px;
 }
  
 .paginacion ul {
 	list-style:none;
-	text-align: right;
+	text-align: center;
 }
  
 .paginacion ul li {
 	display:inline-block;
+  width: 32px;
+  margin-right: 1px;
 }
  
-.paginacion ul li a {
-	display:block;
-	padding:3px 9px;
-	color: #337AB7;
+.paginacion ul li button {
+	width: 32px;
+  height: 32px;
+  display:block;
+	color: black;
+  background: #fff;
   text-decoration: none;
-  border-radius: 2px;
-  border: 1px solid rgb(172, 171, 169);
+  border: none;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #eeeeee !important;
 }
  
-.paginacion ul li a:hover {
-	background:#8fc8e4;
+.paginacion ul li button:hover {
+	background: #e8e8e8;
+  border: 2px solid #a7cae7;
 }
  
+.paginacion ul li button:focus:active, .paginacion ul li button:focus {
+  outline: none;
+}
+
 .paginacion ul li .pagina1 {
-	background:#337AB7;
-  font-weight:bold;
+	background:#0072CE;
   color: #fff;
 }
 
@@ -530,13 +546,15 @@ input[type="radio"]{
 }
 
 
-.HoverClass1:hover {background-color: #8fc8e4 !important;}
+.HoverClass1:hover {border: 2px solid #a7cae7 !important;}
+/* .HoverClass2:focus {outline: none;} */
+/* .HoverClass2:hover {background: #0070cc !important;} */
 
 
 
 .info-categoria button{
   color: #fff;
-  background: #3164a5;
+  background: #00439c;
   font-size: 13px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   border-radius: 20px;
@@ -609,30 +627,30 @@ input[type="radio"]{
 }
 
 .grid .categorias {
-    background:  #4173b6;
+    background:  #00439c;
     width: 100%;
     text-align: center;
 }
 
 .grid .subcategoria {
-    background:  #4173b6;
+    background:  #00439c;
     text-align: center;
 }
 
 .grid .subcategoria2 {
-    background:  #4173b6;
+    background:  #00439c;
     text-align: center;
 }
 
 .grid .subcategoria a{
-    color: rgb(0, 0, 0);
+    color: #e3e3e3;
     margin: 20px 30px 30px;
     border-bottom: 1px solid rgb(173, 173, 173);
     border-radius: 10px;
 }
 
 .grid .subcategoria2 a{
-    color: rgb(0, 0, 0);
+    color: #e3e3e3;
     margin: 20px 30px 30px;
     border-bottom: 1px solid rgb(173, 173, 173);
     border-radius: 10px;
@@ -651,7 +669,7 @@ input[type="radio"]{
 }
 
 .grid .categorias a{
-    color: rgb(0, 0, 0);
+    color: #e3e3e3;
     margin: 20px 30px 30px;
     border-bottom: 1px solid rgb(173, 173, 173);
     border-radius: 10px;
@@ -682,7 +700,7 @@ flex-direction: column;
 justify-content: flex-start;
 position: fixed;
 left: 0;
-background:  #4173b6;
+background:  #00439c;
 height: 100vh;
 width: 70% !important;
 z-index: 2000;
@@ -817,6 +835,7 @@ min-height: 50vh;
 }
 .titulo-final{
   font-size: 15px !important;
+  
 }
 }
 
@@ -944,7 +963,9 @@ min-height: 50vh;
   
 }
 
-
+.text-center{
+  font-weight: bold;
+}
 /* ? SHOPPING CART */
 .shopping-cart-items {
   padding: 20px 0px;
@@ -978,7 +999,7 @@ min-height: 50vh;
 
 
 footer{
-  background:  #4173b6;
+  background:  #00439c;
   padding: 20px 60px;
 }
 
@@ -1005,6 +1026,7 @@ footer{
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
+  color: #e3e3e3;
 }
 
 .horario p{
@@ -1018,6 +1040,7 @@ footer{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding-bottom: 10px;
   margin-bottom: 0;
+  color: #e3e3e3;
 }
 
 .contacto-final{
@@ -1028,7 +1051,7 @@ footer{
   font-size: 15px;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: rgb(0, 0, 0);
+  color: #e3e3e3;
   margin: 9px 0 0 0;
 }
 
@@ -1039,4 +1062,42 @@ footer{
 
 .shopping-cart-total{
   margin-bottom: 20px;
+}
+
+.to-left i{
+  width: 13px;
+  color: #f1f1f1;
+}
+
+.to-right i{
+  width: 17px;
+  color: #f1f1f1;
+}
+
+.to-left{
+  width: 32px;
+  height: 32px;
+	color: #c3c3c3;
+  margin-right: 15px;
+  background: #e6e4e4;
+  text-decoration: none;
+  border: none;
+}
+
+.to-right{
+  width: 32px;
+  height: 32px;
+	color: #c3c3c3;
+  margin-left: 15px;
+  background: #0070cc;
+  text-decoration: none;
+  border: none;
+}
+
+.to-left:hover, .to-right:hover{
+  border: 2px solid #a7cae7;
+}
+
+.to-left:focus:active, .to-left:focus, .to-right:focus:active, .to-right:focus{
+  outline: none;
 }
